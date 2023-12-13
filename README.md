@@ -1,4 +1,7 @@
-# Quiplash
+# Py-Quiplash
+
+## Background
+This is a group project created by [Nolan Donovan](https://github.com/noldono), [Adam Lahouar](https://github.com/adamlahouar), and [EtherealJD](https://github.com/etherealjd) for the class ECE 4564 at Virginia Tech.
 
 ## Rules on Running
 Before reading further please note that in order to start a game you must have three clients open. Once three clients are open the VIP (first person to join) may start the game. Both the API and the game server must be running as well.
