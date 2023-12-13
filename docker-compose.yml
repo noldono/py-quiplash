@@ -1,0 +1,41 @@
+version: '3.7'
+
+services:
+
+  game-api:
+    build:
+      dockerfile: api.Dockerfile
+    ports:
+      - "10021:10021"
+    environment:
+      LOCAL_IP: "0.0.0.0"
+      API_PORT: 10021
+      MONGO_URL: "mongodb://quiplash-mongo-1:27017/game-db"
+      GAME_SERVER_WS_SCHEME: "wss"
+      GAME_SERVER_WS_PORT: 443
+
+  game-server:
+    build:
+      dockerfile: server.Dockerfile
+    ports:
+      - "10020:10020"
+    environment:
+      LOCAL_IP: "0.0.0.0"
+      ENABLE_AUTH: True
+      WS_LISTENER_PORT: 10020
+
+  mongo:
+    image: mongo
+    restart: always
+    ports:
+      - "27017:27017"
+  mongo-express:
+    image: mongo-express
+    restart: always
+    labels:
+      traefik.mongo.backend: mongo
+      traefik.mongo.port: 8081
+      traefik.api.frontend.rule: 'Host: mongo.localhost.devcom.vt.edu'
+
+    environment:
+      ME_CONFIG_MONGODB_URL: mongodb://mongo:27017/
