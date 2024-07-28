@@ -11,10 +11,10 @@ You'll want to start quip_server and the API first.
 ## Starting the Client
 Clone the repository, stay in that current directory where you cloned it, and then paste one of the following scripts into that same terminal window.
 ### Windows
-```cd quiplash; py -m venv venv; venv\Scripts\activate.bat; py -m pip install -r requirements.txt; cd src; py -m quip_client```
+```cd py-quiplash; py -m venv venv; venv\Scripts\activate.bat; py -m pip install -r requirements.txt; cd src; py -m quip_client```
 
 ### MacOS/Linux
-``cd quiplash; python3 -m venv venv; source venv/bin/activate; python3 -m pip install -r requirements.txt; cd src; python3 -m quip_client``
+``cd py-quiplash; python3 -m venv venv; source venv/bin/activate; python3 -m pip install -r requirements.txt; cd src; python3 -m quip_client``
 
 ## Starting the API and server UI
 Inside the src folder run:
